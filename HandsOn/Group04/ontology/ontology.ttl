@@ -2,35 +2,32 @@
 @prefix mod: <https://w3id.org/mod#> .
 @prefix ns: <http://www.chargeAndParkMadrid.org/opendata/handsOn/group04/ontology/Ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 base: a owl:Ontology ;
     mod:createdWith <https://chowlk.linkeddata.es/> .
 
+ns:Parking a owl:Class ;
+    rdfs:label "Parking" ;
+    rdfs:subClassOf ns:Location .
+
 ns:accessibility a owl:DatatypeProperty ;
-    rdfs:label "accessibility" ;
-    rdfs:domain ns:Parking .
+    rdfs:label "accessibility" .
 
 ns:ccsConnectors a owl:DatatypeProperty ;
-    rdfs:label "ccs connectors" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "ccs connectors" .
 
 ns:ccsKw a owl:DatatypeProperty ;
-    rdfs:label "ccs kw" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "ccs kw" .
 
 ns:chademoConnectors a owl:DatatypeProperty ;
-    rdfs:label "chademo connectors" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "chademo connectors" .
 
 ns:chademoKw a owl:DatatypeProperty ;
-    rdfs:label "chademo kw" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "chademo kw" .
 
 ns:dischargeDate a owl:DatatypeProperty ;
-    rdfs:label "discharge date" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "discharge date" .
 
 ns:isPartOf a owl:ObjectProperty ;
     rdfs:label "is part of" ;
@@ -44,13 +41,11 @@ ns:locatedInNeighborhood a owl:ObjectProperty ;
 
 ns:locatedInStreet a owl:ObjectProperty ;
     rdfs:label "located in street" ;
-    rdfs:domain ns:ChargePoint,
-        ns:Parking ;
+    rdfs:domain ns:Location ;
     rdfs:range ns:Street .
 
 ns:location a owl:DatatypeProperty ;
-    rdfs:label "location" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "location" .
 
 ns:managedBy a owl:ObjectProperty ;
     rdfs:label "managed by" ;
@@ -58,44 +53,38 @@ ns:managedBy a owl:ObjectProperty ;
     rdfs:range ns:Operator .
 
 ns:mennekesConnectors a owl:DatatypeProperty ;
-    rdfs:label "mennekes connectors" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "mennekes connectors" .
 
 ns:mennekesKw a owl:DatatypeProperty ;
-    rdfs:label "mennekes kw" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "mennekes kw" .
 
 ns:numberOfEquipments a owl:DatatypeProperty ;
-    rdfs:label "number of equipments" ;
-    rdfs:domain ns:ChargePoint .
+    rdfs:label "number of equipments" .
 
 ns:numberOfTotalPlaces a owl:DatatypeProperty ;
-    rdfs:label "number of total places" ;
-    rdfs:domain ns:Parking .
+    rdfs:label "number of total places" .
 
-ns:openingHours a owl:DatatypeProperty ;
-    rdfs:label "opening hours" ;
-    rdfs:domain ns:ChargePoint,
-        ns:Parking .
+ns:openingHoursChargingPoint a owl:DatatypeProperty ;
+    rdfs:label "opening hours charging point" .
+
+ns:openingHoursParking a owl:DatatypeProperty ;
+    rdfs:label "opening hours parking" .
 
 ns:postalCode a owl:DatatypeProperty ;
-    rdfs:label "postal code" ;
-    rdfs:domain ns:District .
+    rdfs:label "postal code" .
 
-rdf:label a owl:DatatypeProperty ;
-    rdfs:label "label" ;
-    rdfs:domain ns:ChargePoint,
-        ns:District,
-        ns:Neighborhood,
-        ns:Operator,
-        ns:Parking,
-        ns:Street .
+rdfs:label a owl:DatatypeProperty ;
+    rdfs:label "label" .
 
-ns:Operator a owl:Class ;
-    rdfs:label "Operator" .
+ns:ChargePoint a owl:Class ;
+    rdfs:label "Charge Point" ;
+    rdfs:subClassOf ns:Location .
 
 ns:District a owl:Class ;
     rdfs:label "District" .
+
+ns:Operator a owl:Class ;
+    rdfs:label "Operator" .
 
 ns:Neighborhood a owl:Class ;
     rdfs:label "Neighborhood" .
@@ -103,9 +92,6 @@ ns:Neighborhood a owl:Class ;
 ns:Street a owl:Class ;
     rdfs:label "Street" .
 
-ns:Parking a owl:Class ;
-    rdfs:label "Parking" .
-
-ns:ChargePoint a owl:Class ;
-    rdfs:label "Charge Point" .
+ns:Location a owl:Class ;
+    rdfs:label "Location" .
 
